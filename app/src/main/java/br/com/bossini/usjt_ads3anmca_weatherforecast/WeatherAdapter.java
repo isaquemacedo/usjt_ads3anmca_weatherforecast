@@ -17,6 +17,11 @@ public class WeatherAdapter extends
     private List<Weather> previsoes;
     private Context context;
 
+    public WeatherAdapter(List<Weather> previsoes, Context context) {
+        this.context = context;
+        this.previsoes = previsoes;
+    }
+
     class MeuViewHolder extends RecyclerView.ViewHolder{
         private ImageView conditionImageView;
         private TextView dayTextView;
@@ -70,6 +75,6 @@ public class WeatherAdapter extends
 
     @Override
     public int getItemCount() {
-        return 0;
+        return previsoes.size();
     }
 }
