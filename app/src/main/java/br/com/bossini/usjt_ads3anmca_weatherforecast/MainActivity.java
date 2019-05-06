@@ -161,12 +161,7 @@ public class MainActivity extends AppCompatActivity {
         @Override
         protected String doInBackground(String... enderecos) {
             try {
-                String endereco = getString(
-                        R.string.web_service_url,
-                        enderecos[0],
-                        getString(R.string.api_key)
-                );
-                URL url = new URL(endereco);
+                URL url = new URL(enderecos[0]);
                 HttpURLConnection conn = (HttpURLConnection) url.openConnection();
                 InputStream is = conn.getInputStream();
                 BufferedReader reader = new BufferedReader(new InputStreamReader(is));
