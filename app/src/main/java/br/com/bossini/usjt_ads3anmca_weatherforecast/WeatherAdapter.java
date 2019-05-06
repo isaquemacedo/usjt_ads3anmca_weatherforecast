@@ -9,6 +9,8 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
+
 import java.util.List;
 
 public class WeatherAdapter extends
@@ -71,6 +73,7 @@ public class WeatherAdapter extends
                         item.minTemp
                 )
         );
+        Glide.with(context).load(item.iconURL).into(viewHolder.conditionImageView);
     }
 
     @Override
